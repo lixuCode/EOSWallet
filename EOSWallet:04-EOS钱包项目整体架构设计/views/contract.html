@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>合约</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/contract.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+
+        <h1></h1>
+        <div id="contract-cmopile">
+            <h2>第一步：编译合约</h2>
+            <b>请选择需要部署的智能合约文件</b><br>
+            <input type="file" id="contract-cmopile-file">
+            <br><br>
+            <button onclick="contractCmopile()">编译</button>
+        </div>
+
+        <br>
+        <form id="contract-deploy-form">
+            <h2>第二步：部署合约</h2>
+            <select name="account" class="contract-deploy-select">
+            </select>
+            <br><br>
+            <input type="text" name="wallet" hidden="hidden">
+            <input type="text" name="password" hidden="hidden">
+            <input type="text" name="filePath" id="contract-cmopilefile-name" hidden="hidden">
+            <button type="submit">部署</button>
+        </form>
+
+        <form id="contract-call-form">
+            <h2>第三步：调用合约的API</h2>
+            <select name="account" class="contract-deploy-select">
+            </select>
+            <label>调用合约的账号名称</label>
+            <br><br>
+
+            <input type="text" name="contract" placeholder="请输入合约部署者的账号名称">
+            <label>合约部署者账号名称</label>
+            <br><br>
+
+            <input type="text" name="func" placeholder="请输入方法名称">
+            <label>方法名称</label>
+            <br><br>
+
+            <input type="text" name="param" placeholder="请输入方法参数">
+            <label>方法参数</label>
+            <br><br>
+            <!-- <input type="text" name="account" hidden="hidden"> -->
+            <input type="text" name="wallet" hidden="hidden">
+            <input type="text" name="password" hidden="hidden">
+            <button type="submit">调用合约的API</button>
+        </form>
+    </div>
+</body>
+
+</html>
