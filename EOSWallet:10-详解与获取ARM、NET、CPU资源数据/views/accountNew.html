@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>新建账号</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/accountNew.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1></h1>
+        <h2>新建账号</h2>
+        
+        <form id="account-create-form">
+            <input type="text" name="account" placeholder="请输入账号名称">
+            <label>账号名称</label>
+            <br><br>
+
+            <select name="creator" id="account-create-creator-select">
+            </select>
+            <label>创建者名称</label>
+            <br><br>
+
+            <div>以下内容可以选择填写</div>
+
+            <button type="button" onclick="createKey()">新建公钥私钥</button>
+            <br>
+            
+            <input type="text" name="activepubkey" placeholder="请输入active权限的公钥">
+            <label>active公钥</label>
+            <br>
+
+            <input type="text" name="ownerpubkey" placeholder="请输入owner权限的公钥">
+            <label>owner公钥</label>
+            <br><br>
+            <input type="text" name="wallet" hidden="hidden">
+            <input type="text" name="password" hidden="hidden">
+            <button type="submit">新建账号</button>
+        </form>
+
+        <div style="position: absolute;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>

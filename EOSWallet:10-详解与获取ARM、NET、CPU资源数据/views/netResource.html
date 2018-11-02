@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>资源管理</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/netResource.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+    <style>
+        #current-account {
+            color:#0abc9c;
+            font-size:26px;
+        }
+        #net-resource-content {
+            display: flex;
+            flex-wrap: wrap;
+            width: 700px;
+        }
+
+        #net-resource-content>div {
+            margin: 10px 10px 0 10px;
+            border: #37cad2 1px solid;
+            width: 300px;
+        }
+        .interactive {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1>资源管理</h1>
+
+        <b id="current-account"></b> <b>　总资产：<span id="my-total-balance"></span></b>
+        <table cellspacing="10">
+            <tr>
+                <th>可用余额</th>
+                <th>赎回金额</th>
+                <th>NET抵押</th>
+                <th>CPU抵押</th>
+            </tr>
+            <tbody id="my-balance-table"></tbody>
+        </table>
+
+        <div id="net-resource-content">
+            <div>
+                <table cellspacing="10">
+                    <caption><b>ARM内存</b></caption>
+                    <tr>
+                        <td>可用</td>
+                        <td>总量</td>
+                    </tr>
+                    <tbody id="my-arm-table"></tbody>
+                </table>
+            </div>
+            <div class="interactive">
+                <div>买入　卖出</div>
+            </div>
+
+            <div>
+                <table cellspacing="10">
+                    <caption><b>NET宽带</b></caption>
+                    <tr>
+                        <td>抵押</td>
+                        <td>可用</td>
+                        <td>总量</td>
+                    </tr>
+                    <tbody id="my-net-table"></tbody>
+                </table>
+
+                <table cellspacing="10">
+                    <caption><b>CPU宽带</b></caption>
+                    <tr>
+                        <td>抵押</td>
+                        <td>可用</td>
+                        <td>总量</td>
+                    </tr>
+                    <tbody id="my-cpu-table"></tbody>
+                </table>
+            </div>
+            <div class="interactive">
+                <div>抵押　赎回</div>
+            </div>
+        </div>
+
+        <div style="position: absolute;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>

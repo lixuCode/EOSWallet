@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>钱包</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/wallet.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1>钱包列表</h1>
+        <form id="wallet-create-form">
+            <button type="submit">新建钱包</button>
+            <input type="text" name="wallet" placeholder="请输入钱包名称">
+        </form>
+
+        <form id="wallet-open-form">
+            <button type="submit">打开钱包</button>
+            <input type="text" name="wallet" placeholder="请输入钱包名称">
+        </form>
+
+        <table id="wallet-list-table">
+        </table>
+
+        <div style="position: absolute;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>
