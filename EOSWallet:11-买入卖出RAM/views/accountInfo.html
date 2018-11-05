@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>账号详情</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/accountInfo.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1></h1>
+
+        <a class=button href="/netresource.html">资源管理</a>
+        
+        <table id="account-balance-table">
+            <tr>
+                <th>代币</th>
+                <th>金额</th>
+            </tr>
+        </table>
+
+        <table id="account-permission-table">
+            <tr>
+                <th>权限</th>
+                <th>阈值</th>
+                <th>公钥</th>
+                <th>私钥</th>
+                <th>权重</th>
+            </tr>
+        </table>
+
+        <div style="position: fixed;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>

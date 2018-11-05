@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>账号</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/account.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1></h1>
+        <div>
+            <a href="/accountnew.html" class="button">去新建账号</a>
+        </div>
+        <br>
+
+        <form id="account-import-form">
+            <button type="submit">导入账号</button>
+            <input type="text" name="wallet" hidden="hidden">
+            <input type="text" name="privatekey" placeholder="请输入账号私钥">
+        </form>
+
+        <table id="account-list-table">
+        </table>
+        
+        <div style="position: fixed;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>
