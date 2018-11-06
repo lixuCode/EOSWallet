@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>资源管理</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/netResource.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+    <style>
+        #current-account {
+            color:#0abc9c;
+            font-size:26px;
+        }
+        #net-resource-content {
+            display: flex;
+            flex-wrap: wrap;
+            width: 700px;
+        }
+
+        #net-resource-content>div {
+            margin: 10px 10px 0 10px;
+            border: #37cad2 1px solid;
+            width: 300px;
+        }
+        .interactive {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1>资源管理</h1>
+
+        <b id="current-account"></b> <b>　总资产：<span id="my-total-balance"></span></b>
+        <table cellspacing="10">
+            <tr>
+                <th>可用余额</th>
+                <th>赎回金额</th>
+                <th>NET抵押</th>
+                <th>CPU抵押</th>
+            </tr>
+            <tbody id="my-balance-table"></tbody>
+        </table>
+
+        <div id="net-resource-content">
+            <div>
+                <table cellspacing="10">
+                    <caption><b>RAM内存</b></caption>
+                    <tr>
+                        <td>可用</td>
+                        <td>总量</td>
+                    </tr>
+                    <tbody id="my-ram-table"></tbody>
+                </table>
+            </div>
+            <div class="interactive">
+                <b>RAM内存交易</b>
+                <form id="ram-transaction">
+                    <input type="radio" id="ram-transaction-buy" name="transaction_type" value="1" checked="checked">
+                    <label for="ram-transaction-buy">买入</label>
+
+                    <input type="radio" id="ram-transaction-sell" name="transaction_type" value="2" 　checked>
+                    <label for="ram-transaction-sell">卖出</label>
+                    <br>
+
+                    <div>全网内存可用：<span id="ram-total"></span></div>
+                    <div>RAM内存价格：<span id="ram-price"></span> EOS/KB</div>
+
+                    <label>数量：</label>
+                    <input type="text" name="amount" placeholder="请输入EOS数量"><br>
+
+                    <input type="text" name="account" hidden="hidden">
+                    <input type="text" name="wallet" hidden="hidden">
+                    <input type="text" name="password" hidden="hidden">
+                    <button type="submit" id="ram-transaction-button">买入</button>
+                </form>
+            </div>
+
+            <div>
+                <table cellspacing="10">
+                    <caption><b>NET宽带</b></caption>
+                    <tr>
+                        <td>抵押</td>
+                        <td>可用</td>
+                        <td>总量</td>
+                    </tr>
+                    <tbody id="my-net-table"></tbody>
+                </table>
+
+                <table cellspacing="10">
+                    <caption><b>CPU宽带</b></caption>
+                    <tr>
+                        <td>抵押</td>
+                        <td>可用</td>
+                        <td>总量</td>
+                    </tr>
+                    <tbody id="my-cpu-table"></tbody>
+                </table>
+            </div>
+            <div class="interactive">
+                <b>NET、CPU带宽交易</b>
+                <form id="bandwidth-transaction">
+                    <input type="radio" id="bandwidth-transaction-buy" name="bandwidth_transaction_type" value="1"
+                        checked="checked">
+                    <label for="bandwidth-transaction-buy">抵押</label>
+
+                    <input type="radio" id="bandwidth-transaction-sell" name="bandwidth_transaction_type" value="2"
+                        　checked>
+                    <label for="bandwidth-transaction-sell">赎回</label>
+                    <br>
+
+                    <div>NET带宽价格：<span id="net-price"></span> EOS/KB/Day</div>
+                    <label>数量：</label>
+                    <input type="text" name="net_amount" placeholder="请输入购买NET所抵押的EOS数量"><br>
+
+                    <div>CPU带宽价格：<span id="cpu-price"></span> EOS/ms/Day</div>
+                    <label>数量：</label>
+                    <input type="text" name="cpu_amount" placeholder="请输入购买CPU所抵押的EOS数量"><br>
+
+                    <input type="text" name="account" hidden="hidden">
+                    <input type="text" name="wallet" hidden="hidden">
+                    <input type="text" name="password" hidden="hidden">
+                    <button type="submit" id="bandwidth-transaction-button">抵押</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="position: fixed;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>转账</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/jquery.url.js"></script>
+    <script src="js/transaction.js"></script>
+    <link rel="stylesheet" href="css/eoswallet.css">
+</head>
+
+<body>
+    <%include block/nav.html%>
+
+    <div id="main">
+        <h1></h1>
+        <div class="row top">
+            <form id="transaction-send-form" 　>
+                <select name="from" id="transaction-send-account-select">
+                </select>
+                <label>from账号名称</label>
+                <br><br>
+
+                <input type="text" name="to" placeholder="请输入对方账号名称">
+                <label>to账号名称</label>
+                <br><br>
+
+                <input type="text" name="amount" placeholder="请输入转账数量">
+                <select name="symbol" id="transaction-send-token-select">
+                </select>
+                <label>金额</label>
+                <br><br>
+
+                <input type="text" name="memo" placeholder="请输入转账备注">
+                <label>memo备注</label>
+                <br><br>
+                <input type="text" name="wallet" hidden="hidden">
+                <input type="text" name="password" hidden="hidden">
+                <button type="submit">发送交易</button>
+            </form>
+        </div>
+
+        <div class="row top">
+            <table>
+                <tr>
+                    <th>代币</th>
+                    <th>金额</th>
+                </tr>
+            </table>
+            <table id="transation-balance-table">
+            </table>
+        </div>
+
+        <div style="position: fixed;left: 30%;bottom:30px;">Copyright © 2016-2018 北京从零到壹科技有限公司</div>
+    </div>
+</body>
+
+</html>
